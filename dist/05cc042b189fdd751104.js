@@ -1,0 +1,1 @@
+import{createApp}from"vue";import test from"./components/carousel.vue";var app=createApp(test);console.log("1",app),app.mount("#app"),console.log("test");

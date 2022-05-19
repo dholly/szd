@@ -1,0 +1,100 @@
+$fonts_url: '../assets/fonts/';
+$img_icons_url: '../assets/img/icons/';
+$img_nav_url: '../assets/img/nav/';
+
+$text-main:#26292D;
+$text-second:#696E79;
+$text-date:#777D88;
+
+$background-main:#F7F8FA;
+$background-second:#F4FAFF;
+
+$white:#FFFFFF;
+
+$border-main:#5FB0FA;
+$border-second:#347CE5;
+
+$button-gray:#D6D7DD;
+$button-white: #F0F2F5;
+$button-main:#489FF8;
+$button-second:#347CE5;
+
+$button-signup-main: #489FF8;
+$button-signup-hover:#5FB0FA;
+$button-signup-focus:#347CE5;
+
+$button-fb-main:#3770DE;
+$button-fb-hover:#4A7FE6;
+$button-fb-focus:#1853C3;
+
+$button-login-default:#F0F2F5;
+$button-login-hover:#C9D833;
+$button-login-focus:#A5B507;
+
+$button-instagram-main:#F0F2F5;
+$button-instagram-hover:$white;
+$button-instagram-focus:#E3E5EA;
+
+
+$arrows-main:#2CB0FC;
+$arrows-second:#007DE9;
+
+$shadow-main:rgba(72, 159, 248, 0.6);
+
+$label-game:#BBCE00;
+
+
+
+$xs:576px;
+$sm:767px;
+$md:991px;
+$lg:1199px;
+$xl:1399px;
+
+
+
+
+
+@function num($input){  @return math.div($input, $input * 0 + 1); }
+
+
+@mixin easeOut {
+  transition: all .4s cubic-bezier(0.23, 1, 0.32, 1)
+}
+@mixin resp-font($start, $finish, $startvp, $finishvp)
+{
+
+
+  font-size: calc(
+          #{$finish} +
+          #{num($start) - num($finish)} *
+          (100vw - #{$finishvp}) /
+          #{num($startvp) - num($finishvp)}
+  );
+}
+@mixin resp-property($property,$start, $finish, $startvp, $finishvp)
+{
+
+  #{$property}: calc(
+          #{$finish} +
+          #{num($start) - num($finish)} *
+          (100vw - #{$finishvp}) /
+          #{num($startvp) - num($finishvp)}
+  );
+}
+@mixin respond($breakpoint) {
+  @media (max-width: $breakpoint) { @content }
+}
+
+
+@mixin text-gradient($start,$end){
+  background: linear-gradient($start 0%,$end 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes spin {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
