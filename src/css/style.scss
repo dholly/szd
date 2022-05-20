@@ -10,6 +10,7 @@ body {
   font-size: 16px;
   line-height: 1.75em;
   font-weight: 400;
+
   &.stop-scroll {
 
     overflow: hidden;
@@ -44,6 +45,13 @@ ol {
 
 .m10-t-b {
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+.m0-t{
+  margin-top:0;
+}
+.mhead {
+  margin-top: 23px;
   margin-bottom: 10px;
 }
 
@@ -145,8 +153,8 @@ h4 {
     @include respond($lg) {
       width: 250px;
     }
-    @include respond($sm){
-      margin-bottom:5px;
+    @include respond($sm) {
+      margin-bottom: 5px;
     }
 
   }
@@ -196,7 +204,28 @@ h4 {
       background: $button-signup-focus;
     }
   }
+&.tweet{
+  background: $button-main;
+  color: $white;
+  font-size: 13px;
+  padding-top: 0em;
+  padding-bottom: 0em;
 
+  img {
+    max-height: 1.2em;
+    margin-right: 0.5em;
+    margin-bottom: 0.3em;
+  }
+
+  &:hover {
+    background: $button-signup-hover;
+  }
+
+  &:focus {
+    background: $button-signup-focus;
+  }
+
+}
   &.follow {
     display: flex;
     align-items: center;
@@ -335,10 +364,10 @@ header {
   height: 60px;
   align-items: center;
 
-  @include respond($sm){
-    height:auto;
-    padding-top:10px;
-    padding-bottom:10px;
+  @include respond($sm) {
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
 
@@ -494,131 +523,144 @@ header {
   &-right {
     display: flex;
     justify-content: space-between;
-    flex-wrap:wrap;
-    @include respond($sm){
+    flex-wrap: wrap;
+    @include respond($sm) {
 
     }
 
 
-
-    .button-block{
-      @include respond($xl){
+    .button-block {
+      @include respond($xl) {
         margin-right: 40px;
         display: flex;
         justify-content: space-between;
-        align-items:center;
+        align-items: center;
 
       }
-      @include respond($sm){
-        margin-right:0;
+      @include respond($sm) {
+        margin-right: 0;
       }
     }
 
-    }
-  &-left{
-    @include respond($sm){
-      padding:5px;
+  }
+
+  &-left {
+    @include respond($sm) {
+      padding: 5px;
     }
   }
 
 }
 
-.login-block{
-  display:none;
-  width:445px;
-  max-width:100%;
-  z-index:30;
+.login-block {
+  display: none;
+  width: 445px;
+  max-width: 100%;
+  z-index: 30;
   box-shadow: 0px 4px 9px #D6D7DD;
-  border-radius:0 0 10px 10px;
-  background:$white;
-  border-top:4px solid $button-main;
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  padding:40px 70px 60px 70px;
-  overflow-y:scroll;
-  height:auto;
-  @include respond(445px){
-    max-width:calc(100% - 10px);
-    padding:40px calc((100% - 305px) * 0.5);
+  border-radius: 0 0 10px 10px;
+  background: $white;
+  border-top: 4px solid $button-main;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 70px 60px 70px;
+  overflow-y: scroll;
+  height: auto;
+  @include respond(445px) {
+    max-width: calc(100% - 10px);
+    padding: 40px calc((100% - 305px) * 0.5);
 
   }
-  &.active{
-    display:block;
+
+  &.active {
+    display: block;
   }
-  .email{
-    margin-bottom:14px;
+
+  .email {
+    margin-bottom: 14px;
     background-image: url($img_icons_url + '../../img/icons/mail.svg');
   }
-  .password{
+
+  .password {
     background-image: url($img_icons_url + '../../img/icons/instagram.svg');
   }
-  &__title{
-    font-size:32px;
-    font-weight:900;
-    margin-bottom:30px;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 30px;
   }
-  &__forgot{
-    display:block;
-    text-align:right;
-    font-size:13px;
-    line-height:20px;
-    color:$text-date;
-    text-decoration:none;
-    margin-bottom:10px;
+
+  &__forgot {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    line-height: 20px;
+    color: $text-date;
+    text-decoration: none;
+    margin-bottom: 10px;
 
   }
-  .login{
-    display:block;
-    width:100%;
+
+  .login {
+    display: block;
+    width: 100%;
   }
-  .subscribe{
-    padding-top:0.55em;
-    padding-bottom:0.55em;
-    margin-bottom:14.5px;
+
+  .subscribe {
+    padding-top: 0.55em;
+    padding-bottom: 0.55em;
+    margin-bottom: 14.5px;
   }
-  &__not-a-member{
-    text-align:center;
-    color:$text-second;
-    font-size:13px;
-    padding-bottom:10px;
-    margin-bottom:14px;
+
+  &__not-a-member {
+    text-align: center;
+    color: $text-second;
+    font-size: 13px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
 
   }
-  .buttons-block{
-    flex-wrap:wrap;
-    flex-direction:column;
-    .base-button{
+
+  .buttons-block {
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    .base-button {
       box-shadow: 0px 4px 9px #D6D7DD;;
-      padding:10px 5px;
-      text-align:center;
-      color:$text-main;
-      background:$white;
-      font-weight:700;
-      font-size:16px;
-      margin-bottom:10px;
-      line-height:26px;
-      display:flex;
-      img{
-        width:28px;
-        height:auto;
-        margin-right:28px;
-        @include respond(445px){
-          margin-right:10px;
+      padding: 10px 5px;
+      text-align: center;
+      color: $text-main;
+      background: $white;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 26px;
+      display: flex;
+
+      img {
+        width: 28px;
+        height: auto;
+        margin-right: 28px;
+        @include respond(445px) {
+          margin-right: 10px;
         }
       }
     }
   }
-  &__button{
-    width:100%;
 
-    &s-wrapper{
-      display:flex;
-      justify-content:space-between;
-      width:100%;
-      .base-button{
-        width:46%;
+  &__button {
+    width: 100%;
+
+    &s-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .base-button {
+        width: 46%;
       }
     }
   }
@@ -1206,13 +1248,13 @@ header {
     overflow-x: hidden;
     overflow-y: scroll;
     transition: 0.5s;
-    width:280px;
+    width: 280px;
     transform: translateX(-100%);
-    height:100%;
+    height: 100%;
 
     &.active {
       transform: translateX(0);
-      z-index:20;
+      z-index: 20;
 
     }
   }
@@ -1469,11 +1511,14 @@ header {
   }
 
   .article-fix {
+    display: flex;
+    align-items: center;
     font-weight: 700;
 
 
     img {
       margin-bottom: 0.2em;
+      padding-right: 8px;
     }
   }
 
@@ -1821,20 +1866,19 @@ header {
     display: none;
 
 
-
     @include respond($lg) {
       display: flex;
       align-items: center;
       position: absolute;
-      right:1em;
-      top:50%;
-      transform:translateY(-50%);
+      right: 1em;
+      top: 50%;
+      transform: translateY(-50%);
       z-index: 2;
     }
-    @include respond($sm){
-      top:20px;
-      right:1em;
-      transform:none;
+    @include respond($sm) {
+      top: 20px;
+      right: 1em;
+      transform: none;
     }
   }
 
@@ -1874,6 +1918,7 @@ header {
     }
   }
 }
+
 .focusbackground {
   position: fixed;
   left: 0;
@@ -1889,10 +1934,12 @@ header {
 
   }
 }
+
 .navigation {
-  &.active{
+  &.active {
     transform: translate3d(0, 0, 0);
   }
+
   transform: translate3d(-100%, 0, 0);
   transition: easeOut;
   //width: 300px;
