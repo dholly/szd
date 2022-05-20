@@ -15,11 +15,10 @@ const app = new Vue({
 
 import { createApp } from 'vue';
 import test from './components/carousel.vue';
+
 const app = createApp(test);
 console.log('1',app);
-
 app.mount('#app');
-
 
 
 const app2 = createApp(test);
