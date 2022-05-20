@@ -16,6 +16,8 @@ const app = new Vue({
 import {createApp} from 'vue';
 
 import test from './components/carousel.vue';
+import modalController from './components/modal-controller.vue';
+
 
 const app = createApp(test);
 app.mount('#app');
@@ -27,6 +29,10 @@ app2.mount('#app-second');
 
 const app3 = createApp(test);
 app3.mount('#app-third');
+
+
+const modals = createApp(modalController);
+modals.mount('#modals-controller');
 
 
 const burger = document.querySelector(`.burger`);
