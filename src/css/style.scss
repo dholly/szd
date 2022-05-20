@@ -47,9 +47,15 @@ ol {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.m0-t{
-  margin-top:0;
+
+.m30-t {
+  margin-top: 50px;
 }
+
+.m0-t {
+  margin-top: 0;
+}
+
 .mhead {
   margin-top: 23px;
   margin-bottom: 10px;
@@ -62,6 +68,15 @@ ol {
 
 .m20-b {
   margin-bottom: 20px;
+}
+
+.m20-b-t {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.p30-b {
+  padding-bottom: 30px;
 }
 
 .mslider {
@@ -204,28 +219,30 @@ h4 {
       background: $button-signup-focus;
     }
   }
-&.tweet{
-  background: $button-main;
-  color: $white;
-  font-size: 13px;
-  padding-top: 0em;
-  padding-bottom: 0em;
 
-  img {
-    max-height: 1.2em;
-    margin-right: 0.5em;
-    margin-bottom: 0.3em;
+  &.tweet {
+    background: $button-main;
+    color: $white;
+    font-size: 13px;
+    padding-top: 0em;
+    padding-bottom: 0em;
+
+    img {
+      max-height: 1.2em;
+      margin-right: 0.5em;
+      margin-bottom: 0.3em;
+    }
+
+    &:hover {
+      background: $button-signup-hover;
+    }
+
+    &:focus {
+      background: $button-signup-focus;
+    }
+
   }
 
-  &:hover {
-    background: $button-signup-hover;
-  }
-
-  &:focus {
-    background: $button-signup-focus;
-  }
-
-}
   &.follow {
     display: flex;
     align-items: center;
@@ -1407,6 +1424,10 @@ header {
 
 .image-wrapper {
   width: 100%;
+
+  &.facebook {
+    width: 50%;
+  }
 
   img {
     width: 100%;
