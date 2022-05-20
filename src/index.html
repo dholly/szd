@@ -10,21 +10,47 @@
 <body>
 
 <header class="container-fluid container border-bottom ">
-<div class="focusbackground"></div>
+    <div class="focusbackground"></div>
+    <div class="login-block">
+
+        <div class="login-block__title">
+            Login
+
+        </div>
+        <input class="basic-input email" placeholder="Type your email"/>
+        <input class="basic-input password" placeholder="Type your password"/>
+        <a class="login-block__forgot" href="#">Forgot Password</a>
+        <button class="login-block__button base-button subscribe ">Login</button>
+        <div class="login-block__not-a-member border-bottom">
+            Not a member?
+            <a href="#">Sign Up now</a>
+        </div>
+        <div class="buttons-block d-flex">
+            <button class="base-button login-block__button"><img src="assets/img/nav/games/csgo.png" alt="csgo"/> Continue With Googl</button>
+            <button class="base-button login-block__button"><img src="assets/img/nav/games/csgo.png" alt="csgo"/> Continue With Facebook</button>
+            <div class="login-block__buttons-wrapper">
+                <button class="base-button login-block__button"><img src="assets/img/nav/games/csgo.png" alt="csgo"/> Steam</button>
+                <button class="base-button login-block__button"><img src="assets/img/nav/games/csgo.png" alt="csgo"/> Twitter</button>
+            </div>
+        </div>
+    </div>
+    <div id="modals-controller">
+        <modalController/>
+    </div>
 
     <div class="header-wrapper m10-l-r-wrapper">
-        <div class="col-xl-3 col-4 site-title d-flex align-items-center header-left">
+        <div class="col-xl-3 col-md-4 col-12 site-title d-flex align-items-center header-left">
 
             CyberCrunch.com
 
 
         </div>
-        <div class="col-xl-9 col-8 d-flex header-right">
+        <div class="col-xl-9 col-md-8 col-12 d-flex header-right">
             <div class="search-wrapper ">
                 <input class="search basic-input" placeholder="Search"/>
             </div>
-            <div class="header-right">
-                <button class="base-button login">Login</button>
+            <div class="button-block">
+                <button class="base-button login js-login">Login</button>
                 <button class="base-button signup">Signup</button>
             </div>
             <div class="burger__wrap">
