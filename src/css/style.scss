@@ -10,6 +10,10 @@ body {
   font-size: 16px;
   line-height: 1.75em;
   font-weight: 400;
+  &.stop-scroll {
+
+    overflow: hidden;
+  }
 
 }
 
@@ -141,9 +145,10 @@ h4 {
     @include respond($lg) {
       width: 250px;
     }
-    @include respond($sm) {
-      display: none;
+    @include respond($sm){
+      margin-bottom:5px;
     }
+
   }
 }
 
@@ -325,9 +330,17 @@ h4 {
 
 
 header {
-  height: 60px;
   display: flex;
+  position: relative;
+  height: 60px;
   align-items: center;
+
+  @include respond($sm){
+    height:auto;
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+
 
   .site-title {
     font-size: 24px;
@@ -481,11 +494,132 @@ header {
   &-right {
     display: flex;
     justify-content: space-between;
+    flex-wrap:wrap;
+    @include respond($sm){
 
-    @include respond($sm) {
+    }
 
-      justify-content: flex-end;
 
+
+    .button-block{
+      @include respond($xl){
+        margin-right: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+
+      }
+      @include respond($sm){
+        margin-right:0;
+      }
+    }
+
+    }
+  &-left{
+    @include respond($sm){
+      padding:5px;
+    }
+  }
+
+}
+
+.login-block{
+  display:none;
+  width:445px;
+  max-width:100%;
+  z-index:30;
+  box-shadow: 0px 4px 9px #D6D7DD;
+  border-radius:0 0 10px 10px;
+  background:$white;
+  border-top:4px solid $button-main;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding:40px 70px 60px 70px;
+  overflow-y:scroll;
+  height:auto;
+  @include respond(445px){
+    max-width:calc(100% - 10px);
+    padding:40px calc((100% - 305px) * 0.5);
+
+  }
+  &.active{
+    display:block;
+  }
+  .email{
+    margin-bottom:14px;
+    background-image: url($img_icons_url + '../../img/icons/mail.svg');
+  }
+  .password{
+    background-image: url($img_icons_url + '../../img/icons/instagram.svg');
+  }
+  &__title{
+    font-size:32px;
+    font-weight:900;
+    margin-bottom:30px;
+  }
+  &__forgot{
+    display:block;
+    text-align:right;
+    font-size:13px;
+    line-height:20px;
+    color:$text-date;
+    text-decoration:none;
+    margin-bottom:10px;
+
+  }
+  .login{
+    display:block;
+    width:100%;
+  }
+  .subscribe{
+    padding-top:0.55em;
+    padding-bottom:0.55em;
+    margin-bottom:14.5px;
+  }
+  &__not-a-member{
+    text-align:center;
+    color:$text-second;
+    font-size:13px;
+    padding-bottom:10px;
+    margin-bottom:14px;
+
+  }
+  .buttons-block{
+    flex-wrap:wrap;
+    flex-direction:column;
+    .base-button{
+      box-shadow: 0px 4px 9px #D6D7DD;;
+      padding:10px 5px;
+      text-align:center;
+      color:$text-main;
+      background:$white;
+      font-weight:700;
+      font-size:16px;
+      margin-bottom:10px;
+      line-height:26px;
+      display:flex;
+      img{
+        width:28px;
+        height:auto;
+        margin-right:28px;
+        @include respond(445px){
+          margin-right:10px;
+        }
+      }
+    }
+  }
+  &__button{
+    width:100%;
+
+    &s-wrapper{
+      display:flex;
+      justify-content:space-between;
+      width:100%;
+      .base-button{
+        width:46%;
+      }
     }
   }
 
@@ -1067,9 +1201,20 @@ header {
 
   @include respond($lg) {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
+    width:280px;
     transform: translateX(-100%);
+    height:100%;
+
+    &.active {
+      transform: translateX(0);
+      z-index:20;
+
+    }
   }
 }
 
@@ -1680,8 +1825,16 @@ header {
     @include respond($lg) {
       display: flex;
       align-items: center;
-      position: relative;
+      position: absolute;
+      right:1em;
+      top:50%;
+      transform:translateY(-50%);
       z-index: 2;
+    }
+    @include respond($sm){
+      top:20px;
+      right:1em;
+      transform:none;
     }
   }
 
@@ -1729,7 +1882,7 @@ header {
   bottom: 0;
   background-color: rgba(0, 0, 0, .6);
   display: none;
-  z-index: 1;
+  z-index: 10;
 
   &.active {
     display: block;
