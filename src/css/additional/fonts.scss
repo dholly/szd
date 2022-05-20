@@ -1,4 +1,5 @@
 @use 'mixins' as *;
+
 @font-face {
   font-family: 'Noto Sans';
   src: url($fonts_url + 'NotoSans-ExtraBold.ttf') format('truetype');
@@ -141,4 +142,107 @@
   font-weight: normal;
   font-style: italic;
   font-display: swap;
+}
+
+.funclub {
+  flex-wrap: wrap;
+
+  .post-small {
+    .post__label {
+      &.game {
+        background: $background-main;
+        border: 1px solid $button-gray;
+        color: $text-main;
+      }
+    }
+
+    .post__content {
+      &-title {
+        max-height: 4.5em;
+      }
+    }
+
+    .post__footer {
+      margin-top: 0.3em;
+    }
+
+    .base-button.comment {
+      background: $background-main;
+      border: 1px solid $button-gray;
+      color: $text-main;
+    }
+  }
+}
+
+.meme {
+  flex-wrap: wrap;
+
+  .post-small {
+    .post__label {
+      &.game {
+        background: $background-main;
+        border: 1px solid $button-gray;
+        color: $text-main;
+      }
+    }
+
+    .post__content {
+      &-title {
+        max-height: 4.5em;
+      }
+    }
+
+    .post__footer {
+      margin-top: 1em;
+    }
+
+    .base-button.comment {
+      background: $background-main;
+      border: 1px solid $button-gray;
+      color: $text-main;
+    }
+
+    .post__image-wrapper {
+      height: 335px !important;
+    }
+  }
+}
+
+.comments-live {
+  font-size: 32px;
+  font-weight: 900;
+  display: flex;
+  align-items: start;
+
+
+  &::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: #E2005F;
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+
+  &-block {
+    .feed__single {
+      grid-template-rows: 1.5em 6em;
+
+      &-title {
+        max-height: 2.5em;
+        margin-bottom: 0.5em;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      &-comment {
+        max-height: 2.5em !important;
+        font-size: 16px !important;
+        line-height: 22px !important;
+        color: $text-main !important;
+      }
+    }
+  }
+
+
 }

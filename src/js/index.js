@@ -17,6 +17,7 @@ import {createApp} from 'vue';
 
 import test from './components/carousel.vue';
 import modalController from './components/modal-controller.vue';
+import secondCarousel from './components/secondCarousel.vue';
 
 
 const app = createApp(test);
@@ -29,6 +30,9 @@ app2.mount('#app-second');
 
 const app3 = createApp(test);
 app3.mount('#app-third');
+
+const commentsCarousel = createApp(secondCarousel);
+commentsCarousel.mount('#commentsCarousel');
 
 
 const modals = createApp(modalController);
