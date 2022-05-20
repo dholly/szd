@@ -730,6 +730,9 @@ header {
 
     #{$root}__image-wrapper {
       height: 172px;
+      @include respond($sm){
+        height:355px;
+      }
     }
 
     & + .post-small {

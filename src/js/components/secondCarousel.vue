@@ -50,8 +50,8 @@ export default {
 
       },
       breakpoints: {
-        1: {
-          itemsToShow: 1,
+        1:{
+          itemsToShow:1,
         },
 
         500: {
@@ -60,6 +60,10 @@ export default {
         },
 
         750: {
+          itemsToShow: 3,
+
+        },
+        1400: {
           itemsToShow: 2.5,
 
         },
