@@ -29,8 +29,8 @@ ol {
 .m10 {
   margin: 10px;
   @include respond($xs) {
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 7px;
+    margin-right: 7px;
   }
 }
 
@@ -181,8 +181,8 @@ h4 {
     min-width: 100%;
   }
   @include respond($sm) {
-    padding-left: .5em;
-    padding-right: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
 }
@@ -1408,7 +1408,9 @@ header {
     background-color: $background-main;
     padding: 1.5em 3em;
     border-radius: 10px;
-
+@include respond($sm){
+  padding: 1.5em 1.5em;
+}
     h2 {
       padding-left: 0;
       font-size: 24px;
